@@ -2,35 +2,59 @@
   <a routerLink>Lugares</a> / crear
 </div>
 <div class="container">
-  <label>Nombre</label>
-  <input type="text" class="form-control" [(ngModel)]="lugar.nombre">
-  <br />
-  <label>Distancia</label>
-  <input type="number" class="form-control" [(ngModel)]="lugar.distancia">
-  <br />
-  <label>Cercania</label>
-  <input type="number" class="form-control" [(ngModel)]="lugar.cercania">
-  <br />
-  <label>Descripción</label>
-  <textarea type="text" class="form-control" [(ngModel)]="lugar.descripcion"></textarea>
-  <br />
-  <label>Plan</label>
-  <input type="text" class="form-control" [(ngModel)]="lugar.plan">
-  <br />
-  <label>Active</label>
-  <input type="text" class="form-control" [(ngModel)]="lugar.active">
-  <br />
-  <h3>Datos de Dirección</h3>
-  <label>Calle y Número</label>
-  <input type="text" class="form-control" [(ngModel)]="lugar.calle">
-  <br />
-  <label>Ciudad</label>
-  <input type="text" class="form-control" [(ngModel)]="lugar.ciudad">
-  <br />
-  <label>Pais</label>
-  <input type="text" class="form-control" [(ngModel)]="lugar.pais">
+  <div class="row transparent">
+    <div class="col-md-12">
+    <h3 class="title">Datos Basicos</h3>
+      <div class="row">
+          <div class="col-md-12">
+            <div class="col-md-3">
+              <label>Nombre</label>
+              <input type="text" class="form-control" [(ngModel)]="lugar.nombre">
+            </div>
+            <div class="col-md-3">
+              <label>Distancia</label>
+              <input type="number" class="form-control" [(ngModel)]="lugar.distancia">
+            </div>
+            <div class="col-md-3">
+              <label>Cercania</label>
+              <input type="number" class="form-control" [(ngModel)]="lugar.cercania">
+            </div>
+            <div class="col-md-3">
+              <label>Plan</label>
+              <input type="text" class="form-control" [(ngModel)]="lugar.plan">
+            </div>
+            <div class="col-md-9">
+              <label>Descripción</label>
+              <textarea name="foo" type="text" class="form-control" [(ngModel)]="lugar.descripcion" ></textarea>
+            </div>
+            <div class="col-md-3">
+              <label>Active</label>
+              <input type="text" class="form-control" [(ngModel)]="lugar.active">
+            </div>
+          </div>
+        </div>
+        <h3 class="title">Datos de Dirección</h3>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="col-md-4">
+              <label>Calle y Número</label>
+              <input type="text" class="form-control" [(ngModel)]="lugar.calle">
+            </div>
+            <div class="col-md-4">
+              <label>Ciudad</label>
+              <input type="text" class="form-control" [(ngModel)]="lugar.ciudad">
+            </div>
+            <div class="col-md-4">
+              <label>Pais</label>
+              <input type="text" class="form-control" [(ngModel)]="lugar.pais">
+            </div>
+          </div>
+        </div>
+      <hr/>
+      <a class="btn btn-primary" (click)="guardarLugar()">Enviar</a>
+    </div>
+  </div>
   <hr id="idhr" />
-  <a class="btn btn-primary" (click)="guardarLugar()">Enviar</a>
-  <a class="btn btn-danger" routerLink="/lugares">Regresar</a>
+  <a id="btn-regresar" class="btn btn-danger" routerLink="/lugares">Regresar</a>
   <br />
 </div>

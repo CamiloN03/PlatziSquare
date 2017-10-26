@@ -6,3 +6,83 @@
 #container {
   padding: 0;
 }
+
+agm-map {
+  height: 300px;
+  margin-top: 10px;
+}
+
+.transparent .tuyin
+	{
+	background-color: rgba(255, 255, 255, 0.37);
+	border: 1px solid #F7F7F7;
+	border-radius: 5px;
+	box-shadow: 0px 0px 2px 0px rgba(181, 181, 181, 0.3);
+	padding: 2%;
+	text-align: center;
+	min-height: 315px;
+	position: relative;
+	}
+.transparent .tuyin .title
+	{
+	text-align: center;
+	color: #FFF;
+	font-size: 30px;
+	}
+.transparent .tuyin .plan-name
+	{
+	font-size: 20px;
+	font-weight: 400;
+	border-bottom: 1px solid #FFF;
+	padding-bottom: 15px;
+	padding: 10px
+	}
+
+.transparent .tuyin .text
+	{
+	margin-top: 20px;
+	color: #474747;
+	font-weight: 300;
+	margin-bottom: 13px;
+	font-size: 16px;
+	text-align: justify;
+	}
+
+  textarea {
+    resize:none;
+  }
+
+.transparent .menu
+{
+	background-color: rgba(255, 255, 255, 0.37);
+	border: 1px solid #F7F7F7;
+	border-radius: 5px;
+	box-shadow: 0px 0px 2px 0px rgba(181, 181, 181, 0.3);
+	padding: 2%;
+	text-align: center;
+	min-height: 315px;
+	position: relative;
+}
+.transparent .menu .title
+{
+	text-align: center;
+	color: #FFF;
+	font-size: 30px;
+}
+.transparent .menu .plan-name
+{
+	font-size: 20px;
+	font-weight: 400;
+	border-bottom: 1px solid #FFF;
+	padding: 5px
+}
+
+.transparent .menu .text
+{
+	margin-top: 20px;
+	color: #474747;
+	font-weight: 300;
+	margin-bottom: 13px;
+	font-size: 16px;
+	text-align: justify;
+}

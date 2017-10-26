@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LugaresService } from '../services/lugares.service';
+declare var swal: any;
 
 @Component({
   selector: 'app-lugares',
@@ -21,9 +22,7 @@ export class LugaresComponent {
                     //debugger;
                   },error => {
                     console.log(error);
-                    alert('Tenemos algo de dificultades, disculpe las molestias. Error:' + error.statusText);
-                  }
-
-                );
+                    swal('Error!','Tenemos algo de dificultades, disculpe las molestias','error');
+                  });
   }
 }

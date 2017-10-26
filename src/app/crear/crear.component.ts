@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { LugaresService } from '../services/lugares.service';
 import { ActivatedRoute } from '@angular/router';
+declare var swal: any;
 
 @Component({
   selector: 'app-crear',
@@ -28,11 +29,11 @@ export class CrearComponent {
           this.lugar.lng = result.json().results[0].geometry.location.lng;
           if(this.id != 'new'){
             this.lugaresService.editarLugar(this.lugar);
-            alert('negocio editado con éxito!');
+            swal('Respuesta!','Negocio editado con éxito!','success');
           }else{
             this.lugar.id = Date.now();
-            this.lugaresService.guardarLugar(this.lugar);                
-            alert('negocio guardado con éxito!');
+            this.lugaresService.guardarLugar(this.lugar);
+            swal('Respuesta!','Negocio guardado con éxito!','success');
           }
           this.lugar={};
         });

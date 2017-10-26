@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LugaresService } from '../services/lugares.service';
+declare var swal: any;
 
 @Component({
   selector: 'app-contacto',
@@ -14,15 +15,13 @@ export class ContactoComponent {
     //this.lugares = lugaresService.getLugares();
     lugaresService.getLugares()
                   .subscribe((lugares) =>{
-                    this.lugares = lugares;
+                    this.lugares = lugares.json();
                     var me = this;
                     me.lugares = Object.keys(me.lugares).map(function (key) { return me.lugares[key]; });
                     //debugger;
                   },error => {
                     console.log(error);
-                    alert('Tenemos algo de dificultades, disculpe las molestias. Error:' + error.statusText);
-                  }
-
-                );
+                    swal('Error!','Tenemos algo de dificultades, disculpe las molestias','error');
+                  });
   }
 }

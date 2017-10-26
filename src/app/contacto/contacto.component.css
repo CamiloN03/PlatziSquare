@@ -45,8 +45,8 @@ body {
 	text-align: justify;
 	}
 
-  textarea {
-    resize:none;
+  textarea[name=foo] {
+      resize: none;
   }
 
   #idhr {
