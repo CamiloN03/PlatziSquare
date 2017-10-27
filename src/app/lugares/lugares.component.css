@@ -86,3 +86,21 @@ agm-map {
 	font-size: 16px;
 	text-align: justify;
 }
+
+#title_h3 {
+  margin:0;
+}
+
+.icon-star {
+  color: yellow;
+  text-shadow: 0px 0px 5px #000;
+}
+
+#col-btn{
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+#hr {
+  margin-bottom: 0;
+}

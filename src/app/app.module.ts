@@ -14,10 +14,13 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { LugaresService } from './services/lugares.service';
 import { CrearComponent } from './crear/crear.component';
 import { HttpModule } from '@angular/http';
+import { LinkifystrPipe } from './pipes/linkifystr.pipe';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const appRoutes: Routes = [
   {path:'',component: LugaresComponent},
@@ -41,7 +44,8 @@ export const firebaseConfig = {
     DetalleComponent,
     LugaresComponent,
     ContactoComponent,
-    CrearComponent
+    CrearComponent,
+    LinkifystrPipe
   ],
   imports: [
     BrowserModule,
@@ -54,7 +58,8 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    HttpModule
+    HttpModule,
+    BrowserAnimationsModule
   ],
   providers: [LugaresService],
   bootstrap: [AppComponent]

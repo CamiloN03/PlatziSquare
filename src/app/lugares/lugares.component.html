@@ -10,25 +10,53 @@
           </agm-map>
         </div>
     </div>
-  <hr />
+  <hr id ="hr"/>
+  <div class="col-md-12" id="container">
+    <div class="col-md-4" id ="col-btn">
+      <a class="btn btn-primary" routerLink="/crear/new" id ="btn-crear">
+        <span class="glyphicon glyphicon-plus"></span>
+        Crear Nuevo Negocio
+      </a>
+    </div>
+  </div>
     <div class="row">
-      <div class="col-md-8" id="container">
-        <div class="col-md-12" id="container">
-          <div class="col-md-4">
-            <a class="btn btn-primary" routerLink="/crear/new" id ="btn-crear">Crear Nuevo Negocio</a>
-          </div>
-        </div>
-        <br />
-        <div class="col-md-8">
+      <div class="col-md-6" id="container">
+        <div class="col-md-12">
           <div class="menu">
             <span class="title">Lugares Cercanos</span>
              <div class="plan-name"></div>
                <div class="text">
                 <ul class="list-group">
                   <ng-container *ngFor="let lugar of lugares">
-                    <a routerLink="/crear/{{lugar.id}}"> <!--[queryParams]="{action:'edit',referer:'google'}">-->
-                      <li class="list-group-item" *ngIf="lugar.active" >{{lugar.nombre}}</li>
-                    </a>
+                     <!--[queryParams]="{action:'edit',referer:'google'}">-->
+                      <li class="list-group-item" *ngIf="lugar.active" >
+                        <a routerLink="/crear/{{lugar.id}}"><h3 id="title_h3">{{lugar.nombre}}</h3></a>
+                        <br />
+                        <small>Creado:{{lugar.id | date:'mediumTime' | uppercase}}</small>
+                        <p [innerHtml]="lugar.descripcion | linkifystr"></p>
+                      </li>
+                  </ng-container>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6" [@contenedorAnimable]="state" id="container">
+        <div class="col-md-12">
+          <div class="menu">
+            <span class="title">Lugares Plus</span>
+             <div class="plan-name"></div>
+               <div class="text">
+                <ul class="list-group">
+                  <ng-container *ngFor="let lugar of lugares">
+                     <!--[queryParams]="{action:'edit',referer:'google'}">-->
+                      <li class="list-group-item" *ngIf="lugar.plan == 'Pagado'" >
+                        <span class="glyphicon glyphicon-star pull-right icon-star"></span>
+                        <a routerLink="/crear/{{lugar.id}}"><h3 id="title_h3">{{lugar.nombre}}</h3></a>
+                        <br />
+                        <small>Creado:{{lugar.id | date:'mediumTime' | uppercase}}</small>
+                        <p [innerHtml]="lugar.descripcion | linkifystr"></p>
+                      </li>
                   </ng-container>
                 </ul>
             </div>
