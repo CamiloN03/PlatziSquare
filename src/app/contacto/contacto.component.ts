@@ -15,7 +15,7 @@ export class ContactoComponent {
     //this.lugares = lugaresService.getLugares();
     lugaresService.getLugares()
                   .subscribe((lugares) =>{
-                    this.lugares = lugares.json();
+                    this.lugares = lugares;
                     var me = this;
                     me.lugares = Object.keys(me.lugares).map(function (key) { return me.lugares[key]; });
                     //debugger;

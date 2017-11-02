@@ -12,7 +12,11 @@ import { DetalleComponent } from './detalle/detalle.component';
 import { LugaresComponent } from './lugares/lugares.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { LugaresService } from './services/lugares.service';
+import { MyGuard } from './services/my-guard.service';
+import { AutorizacionService } from './services/autorizacion.service';
 import { CrearComponent } from './crear/crear.component';
+import { LoginComponent } from './login/login.component';
+import { RegistroComponent } from './registro/registro.component';
 import { HttpModule } from '@angular/http';
 import { LinkifystrPipe } from './pipes/linkifystr.pipe';
 
@@ -27,7 +31,9 @@ const appRoutes: Routes = [
   {path:'lugares',component: LugaresComponent},
   {path:'detalle/:id',component: DetalleComponent},
   {path:'contacto',component: ContactoComponent},
-  {path:'crear/:id',component: CrearComponent}
+  {path:'crear/:id',component: CrearComponent, canActivate:[MyGuard]},
+  {path:'login',component: LoginComponent},
+  {path:'registro',component: RegistroComponent},
 ];
 export const firebaseConfig = {
     apiKey: "AIzaSyBzTUVRyLlJMR75kurmeYPSWdV4IVgT0Jk",
@@ -45,6 +51,8 @@ export const firebaseConfig = {
     LugaresComponent,
     ContactoComponent,
     CrearComponent,
+    LoginComponent,
+    RegistroComponent,
     LinkifystrPipe
   ],
   imports: [
@@ -61,7 +69,7 @@ export const firebaseConfig = {
     HttpModule,
     BrowserAnimationsModule
   ],
-  providers: [LugaresService],
+  providers: [LugaresService, AutorizacionService, MyGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -38,8 +38,16 @@ export class LugaresComponent {
                     me.lugares = Object.keys(me.lugares).map(function (key) { return me.lugares[key]; });
                     this.state = 'final';
                   },error => {
-                    console.log(error);
-                    swal('Error!','Tenemos algo de dificultades, disculpe las molestias','error');
+                    if(error.statusText == "Unauthorized")
+                    {
+                      swal('Información!','Usuario no autenticado!','warning');
+                      console.log(error);
+                    }
+                    else
+                    {
+                      swal('Error!','Tenemos algo de dificultades, disculpe las molestias','error');
+                      console.log(error);
+                    }
                   });
   }
 }
