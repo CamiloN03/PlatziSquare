@@ -36,6 +36,21 @@
         <h3 class="title">Datos de Dirección</h3>
         <div class="row">
           <div class="col-md-12">
+            <div class="col-md-12">
+              <div class="well">
+                <form>
+                  <label>Buscar Negocio en Google</label>
+                  <input type="text" class="form-control" [formControl]="searchField">
+                </form>
+                <ul class="list-group">
+                  <li class="list-group-item" *ngFor="let result of results$ | async" (click)="seleccionarDireccion(result)">{{result.formatted_address}}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
             <div class="col-md-4">
               <label>Calle y Número</label>
               <input type="text" class="form-control" [(ngModel)]="lugar.calle">

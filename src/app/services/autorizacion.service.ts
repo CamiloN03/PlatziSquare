@@ -49,4 +49,8 @@ export class AutorizacionService{
     public logout(){
       this.angularFireAuth.auth.signOut();
     };
+
+    public getUser(){
+      return this.angularFireAuth.auth;
+    }
 }
