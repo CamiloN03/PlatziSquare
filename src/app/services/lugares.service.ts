@@ -16,6 +16,7 @@ export class LugaresService{
     return this.http.get(this.API_ENDPOINT+'/.json')
                .map((resultado)=>{
                  const data = resultado.json().lugares;
+                 console.log(data);
                  return data;
                })
     //if(window.localStorage){
@@ -57,13 +58,26 @@ export class LugaresService{
   public guardarLugar(lugar){
     this.afDB.database.ref('lugares/'+lugar.id).set(lugar);
     //const headers = new Headers({"Content-Type":"application/json"});
-    //return this.http.post(this.API_ENDPOINT+'/lugares.json',lugar,{headers:headers})
+    //var key:any="firebase:authUser:AIzaSyBzTUVRyLlJMR75kurmeYPSWdV4IVgT0Jk:[DEFAULT]";
+    //let ls:any = localStorage.getItem(key);
+    //ls = JSON.parse(ls);
+    //console.log('Storage: ', ls);
+    //return this.http.post(`${this.API_ENDPOINT+'/lugares/'+lugar.id}/.json?auth=${ls.stsTokenManager.accessToken}`,lugar,{headers:headers})
     //           .subscribe();
   }
   public obtenerGeoData(direccion){
     return this.http.get('http://maps.google.com/maps/api/geocode/json?address='+direccion);
   }
   public getLugar(id){
-    return this.afDB.object('lugares/'+id);
+     return this.afDB.object('lugares/'+id);
+     //       .subscribe(item=> console.log(item.$key));
+     //return this.afDB.object('lugares/'+id)
+     //return this.afDB.object(`/lugares/${id}/`);
+     //return this.http.get(this.API_ENDPOINT+'/lugares/'+id+'/.json')
+     //.map((resultado)=>{
+     //   console.log(resultado.json());
+     //   const data = resultado.json();
+     //   return data;
+     //})
   }
 }
